@@ -12,7 +12,6 @@ import example.assignment.chutki.repository.VideoCategoryInfoRepository
 import example.assignment.chutki.repository.VideoCategoryInfoRepositoryImpl
 import example.assignment.chutki.router.CategoryActivityRouter
 import example.assignment.chutki.router.CategoryActivityRouterImpl
-import javax.inject.Singleton
 
 @InstallIn(ActivityRetainedComponent::class)
 @Module

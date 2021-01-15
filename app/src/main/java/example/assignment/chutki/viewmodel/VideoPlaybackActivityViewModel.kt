@@ -1,6 +1,5 @@
 package example.assignment.chutki.viewmodel
 
-import android.hardware.camera2.CaptureFailure
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

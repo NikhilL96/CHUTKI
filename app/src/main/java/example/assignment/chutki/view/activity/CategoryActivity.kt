@@ -1,11 +1,8 @@
 package example.assignment.chutki.view.activity
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.exoplayer2.SimpleExoPlayer
 import dagger.hilt.android.AndroidEntryPoint
 import example.assignment.chutki.R
 import example.assignment.chutki.router.CategoryActivityRouter
@@ -13,7 +10,6 @@ import example.assignment.chutki.view.adapter.CategoriesAdapter
 import example.assignment.chutki.view.adapter.CategoryItemCallback
 import example.assignment.chutki.viewmodel.CategoryActivityViewModel
 import kotlinx.android.synthetic.main.activity_categories.*
-import java.lang.ref.WeakReference
 import javax.inject.Inject
 
 @AndroidEntryPoint

@@ -1,7 +1,6 @@
 package example.assignment.chutki.view.activity
 
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -9,7 +8,6 @@ import android.view.WindowInsets
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import dagger.hilt.android.AndroidEntryPoint
 
 abstract class BaseActivity<T : ViewModel>: AppCompatActivity() {
 

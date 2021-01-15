@@ -1,22 +1,17 @@
 package example.assignment.chutki.view.adapter
 
 import android.content.Context
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewTreeObserver
 import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import example.assignment.chutki.R
 import example.assignment.chutki.extension.UIExtensions.loadFromUrl
-import example.assignment.chutki.model.categories.Category
 import example.assignment.chutki.model.videos.Video
-import kotlinx.android.synthetic.main.layout_category_list_item.view.*
 import kotlinx.android.synthetic.main.layout_video_list_item.view.*
 
 class VideosAdapter(val context: Context,

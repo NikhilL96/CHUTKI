@@ -2,13 +2,10 @@ package example.assignment.chutki.view.activity
 
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.widget.ImageView
 import android.widget.ProgressBar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.exoplayer2.*
@@ -202,7 +199,6 @@ class VideoPlaybackActivity: BaseActivity<VideoPlaybackActivityViewModel>(), Vid
         for(index in 0 until player?.mediaItemCount!!) {
             if(player?.getMediaItemAt(index)?.mediaId == mediaItem?.mediaId &&
                 index!= videoListRecyclerAdapter.selectedVideoPosition) {
-                Log.d("asdsa",index.toString())
                 videoListRecyclerAdapter.changeSelection(null, index)
                 break
             }
