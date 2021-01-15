@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">chutki</string>
+    <string name="generic_error_string">An Unexpected Error occurred</string>
+    <string name="image_load_failed_error">Image load failed</string>
+</resources>
