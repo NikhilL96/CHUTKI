@@ -7,6 +7,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import dagger.hilt.android.AndroidEntryPoint
 import example.assignment.chutki.R
+import example.assignment.chutki.UserDetailsManager
 import example.assignment.chutki.extension.StringExtensions.validateEmail
 import example.assignment.chutki.extension.StringExtensions.validatePassword
 import example.assignment.chutki.extension.UIExtensions.afterTextChanged
@@ -18,7 +19,7 @@ import java.lang.Exception
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class LoginActivity: BaseActivity<LoginActivityViewModel>(false) {
+class LoginActivity : BaseActivity<LoginActivityViewModel>(false) {
 
     override val layoutId: Int
         get() = R.layout.activity_login
@@ -31,6 +32,7 @@ class LoginActivity: BaseActivity<LoginActivityViewModel>(false) {
     private lateinit var passwordTextLayout: TextInputLayout
     private lateinit var passwordEditText: TextInputEditText
     private lateinit var newUser: TextView
+
     @Inject
     lateinit var router: LoginRouter
 
@@ -38,15 +40,14 @@ class LoginActivity: BaseActivity<LoginActivityViewModel>(false) {
         super.onCreate(savedInstanceState)
         initUI()
     }
-    
-    private fun initUI() {
-       loginButton = login_button
-       emailTextLayout = login_email_text_layout
-       emailEditText = login_email_edit_text
-       passwordTextLayout = login_password_text_layout
-       passwordEditText = login_password_edit_text
-       newUser = new_user_register_tv
 
+    private fun initUI() {
+        loginButton = login_button
+        emailTextLayout = login_email_text_layout
+        emailEditText = login_email_edit_text
+        passwordTextLayout = login_password_text_layout
+        passwordEditText = login_password_edit_text
+        newUser = new_user_register_tv
         initUIListeners()
     }
 
@@ -56,13 +57,14 @@ class LoginActivity: BaseActivity<LoginActivityViewModel>(false) {
                 emailEditText.text?.toString()?.let { email ->
                     passwordEditText.text?.toString()?.let { password ->
                         viewModel.fetchUser(email, onSuccess = {
-                            if(password == it.password) {
+                            if (password == it.password) {
                                 finishAffinity()
+                                UserDetailsManager.setLoginInfo(email)
                                 router.openCategoryList()
                             } else {
                                 emailTextLayout.error = getString(R.string.incorrect_creds_error)
                             }
-                        },this::onFailure)
+                        }, this::onFailure)
                     }
                 }
             }
@@ -117,7 +119,7 @@ class LoginActivity: BaseActivity<LoginActivityViewModel>(false) {
         }
     }
 
-    private fun onFailure(exception: Exception) = when(exception) {
+    private fun onFailure(exception: Exception) = when (exception) {
         is UserNotFoundException -> {
             emailTextLayout.error = getString(R.string.not_registered_error)
         }

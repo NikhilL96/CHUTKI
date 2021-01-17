@@ -8,7 +8,7 @@ import example.assignment.chutki.view.activity.RegisterUserActivity
 import javax.inject.Inject
 
 
-class LoginRouterImpl@Inject constructor(private val activity: FragmentActivity)
+class LoginRouterImpl @Inject constructor(private val activity: FragmentActivity)
     : LoginRouter {
 
     override fun openLogin() {

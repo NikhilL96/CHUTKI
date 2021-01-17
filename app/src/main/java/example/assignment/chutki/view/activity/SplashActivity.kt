@@ -5,6 +5,7 @@ import android.os.Handler
 import android.os.Looper
 import dagger.hilt.android.AndroidEntryPoint
 import example.assignment.chutki.R
+import example.assignment.chutki.UserDetailsManager
 import example.assignment.chutki.router.LoginRouter
 import example.assignment.chutki.viewmodel.SplashActivityViewModel
 import javax.inject.Inject
@@ -29,13 +30,18 @@ class SplashActivity: BaseActivity<SplashActivityViewModel>(false) {
         super.onCreate(savedInstanceState)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            viewModel.fetchAllUser {
-                if(it)
-                    router.openLogin()
-                 else
-                    router.openRegister()
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+            if(!UserDetailsManager.getLoginInfo().isNullOrBlank())
+                router.openCategoryList()
+            else {
+                viewModel.fetchAllUser {
+                    if(it)
+                        router.openLogin()
+                    else
+                        router.openRegister()
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                }
             }
+
         }, DUMMY_DELAY)
 
     }

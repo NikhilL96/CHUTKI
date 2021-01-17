@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentActivity
 import example.assignment.chutki.view.activity.VideoPlaybackActivity
 import javax.inject.Inject
 
-class CategoryActivityRouterImpl@Inject constructor(private val activity: FragmentActivity)
+class CategoryActivityRouterImpl @Inject constructor(private val activity: FragmentActivity)
     : CategoryActivityRouter {
 
     override fun openVideoPlayback(categorySelected: String) {

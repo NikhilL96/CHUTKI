@@ -8,6 +8,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import dagger.hilt.android.AndroidEntryPoint
 import example.assignment.chutki.R
+import example.assignment.chutki.UserDetailsManager
 import example.assignment.chutki.extension.StringExtensions.validateEmail
 import example.assignment.chutki.extension.StringExtensions.validatePassword
 import example.assignment.chutki.extension.UIExtensions.afterTextChanged
@@ -63,6 +64,7 @@ class RegisterUserActivity : BaseActivity<RegisterUserActivityViewModel>(false) 
                     passwordEditText.text?.toString()?.let { password ->
                         viewModel.insertUser(email, password, onSuccess = {
                             finishAffinity()
+                            UserDetailsManager.setLoginInfo(email)
                             router.openCategoryList()
                         },this::onFailure)
                     }

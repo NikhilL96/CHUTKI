@@ -8,6 +8,7 @@ import android.view.WindowInsets
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import example.assignment.chutki.R
 
 abstract class BaseActivity<T : ViewModel>(private val isFullScreen: Boolean = true): AppCompatActivity() {
 
@@ -48,7 +49,7 @@ abstract class BaseActivity<T : ViewModel>(private val isFullScreen: Boolean = t
 
     fun showErrorDialog(error: String, positiveAction:() -> Unit) {
         AlertDialog.Builder(this)
-            .setTitle("Warning")
+            .setTitle(getString(R.string.warning))
             .setMessage(error)
             .setPositiveButton(
                 android.R.string.ok

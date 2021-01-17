@@ -4,7 +4,7 @@
     <string name="image_load_failed_error">Image load failed</string>
     <string name="email_mandatory_error">Email is mandatory to register</string>
     <string name="invalid_email_error">Please enter a valid email address</string>
-    <string name="password_mandatory_error">Password is mandatory to register</string>
+    <string name="password_mandatory_error">Password is mandatory</string>
     <string name="passwords_mismatch_error">Passwords do not match</string>
     <string name="password_criteria_error">Password should contain 8 characters, at least one upper case, lower case and a number</string>
     <string name="existing_user_error">User exists. Please Login</string>
@@ -20,4 +20,6 @@
     <string name="verify_password">Verify Password</string>
     <string name="password">Password</string>
     <string name="welcome_to_chutki">Welcome to Chutki</string>
+    <string name="logout">Logout</string>
+    <string name="warning">Warning</string>
 </resources>

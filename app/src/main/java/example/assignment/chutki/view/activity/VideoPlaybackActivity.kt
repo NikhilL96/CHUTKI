@@ -196,7 +196,7 @@ class VideoPlaybackActivity: BaseActivity<VideoPlaybackActivityViewModel>(true),
 
     override fun onMediaItemTransition(mediaItem: MediaItem?, reason: Int) {
         super.onMediaItemTransition(mediaItem, reason)
-        for(index in 0 until player?.mediaItemCount!!) {
+        for(index in 0 until (player?.mediaItemCount?:0)) {
             if(player?.getMediaItemAt(index)?.mediaId == mediaItem?.mediaId &&
                 index!= videoListRecyclerAdapter.selectedVideoPosition) {
                 videoListRecyclerAdapter.changeSelection(null, index)
