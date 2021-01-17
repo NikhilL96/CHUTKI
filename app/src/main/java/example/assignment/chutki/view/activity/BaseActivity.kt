@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-abstract class BaseActivity<T : ViewModel>: AppCompatActivity() {
+abstract class BaseActivity<T : ViewModel>(private val isFullScreen: Boolean = true): AppCompatActivity() {
 
     protected abstract val layoutId: Int
     protected abstract val viewModelType: Class<T>
@@ -18,10 +18,12 @@ abstract class BaseActivity<T : ViewModel>: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(viewModelType)
-
         setContentView(layoutId)
-        setListeners()
-        makeActivityFullScreen()
+
+        if(isFullScreen) {
+            setListeners()
+            makeActivityFullScreen()
+        }
     }
 
     private fun setListeners() {

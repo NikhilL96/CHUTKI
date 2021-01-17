@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextInputLayoutStyle" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeErrorColor">@android:color/holo_red_light</item>
+        <item name="boxStrokeColor">@color/white_alpha_80</item>
+        <item name="hintTextColor">@color/white_alpha_80</item>
+        <item name="errorTextColor">@android:color/holo_red_light</item>
+    </style>
+
+</resources>

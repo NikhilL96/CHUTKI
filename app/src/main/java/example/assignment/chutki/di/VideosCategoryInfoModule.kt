@@ -35,3 +35,4 @@ object NetworkModule {
         return Gson()
     }
 }
+

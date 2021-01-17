@@ -29,6 +29,5 @@ class VideoCategoryInfoRepositoryImpl @Inject constructor(val apiService: VideoC
         return gson.fromJson(reponse, VideosResponseModel::class.java)?.response?.videos
     }
 
-
 }
 

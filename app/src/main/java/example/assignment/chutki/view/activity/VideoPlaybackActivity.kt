@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.custom_playback_control.*
 import kotlin.properties.Delegates
 
 @AndroidEntryPoint
-class VideoPlaybackActivity: BaseActivity<VideoPlaybackActivityViewModel>(), VideoItemCallback, Player.EventListener {
+class VideoPlaybackActivity: BaseActivity<VideoPlaybackActivityViewModel>(true), VideoItemCallback, Player.EventListener {
 
     companion object {
         const val SELECTED_ITEM_POSITION_KEY = "selectedCategory"

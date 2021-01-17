@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_categories.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class CategoryActivity : BaseActivity<CategoryActivityViewModel>(), CategoryItemCallback {
+class CategoryActivity : BaseActivity<CategoryActivityViewModel>(true), CategoryItemCallback {
 
     override val layoutId: Int
         get() = R.layout.activity_categories
@@ -49,7 +49,7 @@ class CategoryActivity : BaseActivity<CategoryActivityViewModel>(), CategoryItem
 
     override fun onItemClick(position: Int) {
         viewModel.categories.getOrNull(position)?.name?.let{
-            router.passDataToVideoPlayback(it)
+            router.openVideoPlayback(it)
         }
     }
 }

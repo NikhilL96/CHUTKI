@@ -8,7 +8,7 @@ import javax.inject.Inject
 class CategoryActivityRouterImpl@Inject constructor(private val activity: FragmentActivity)
     : CategoryActivityRouter {
 
-    override fun passDataToVideoPlayback(categorySelected: String) {
+    override fun openVideoPlayback(categorySelected: String) {
         activity.let{safeActivity ->
             val intent = Intent(safeActivity, VideoPlaybackActivity::class.java)
             intent.putExtra(VideoPlaybackActivity.SELECTED_ITEM_POSITION_KEY, categorySelected)
@@ -18,5 +18,5 @@ class CategoryActivityRouterImpl@Inject constructor(private val activity: Fragme
 }
 
 interface CategoryActivityRouter{
-    fun passDataToVideoPlayback(categorySelected: String)
+    fun openVideoPlayback(categorySelected: String)
 }
